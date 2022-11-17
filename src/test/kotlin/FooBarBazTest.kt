@@ -4,7 +4,6 @@ import org.testng.annotations.Test
 
 import org.testng.Assert.*
 import java.io.ByteArrayOutputStream
-import java.io.File
 import java.io.PrintStream
 
 class FooBarBazTest {
@@ -133,21 +132,23 @@ class FooBarBazTest {
     @Test
     fun `Should print 1`() {
         val n = 1
-        foo.fooBar(1)
+        foo.`Need numbers printed, but only if not divisible by 3 or 5`(n)
         assertEquals(outContent.toString(), comparison.subList(0, 1).joinToString { it + br }, "Unexpected output.")
     }
 
     @Test
     fun `Should print from 1 to 100 correctly`() {
         val n = 100
-        foo.fooBar(n)
-        assertEquals(outContent.toString().split(br).subList(0, n-1), comparison.subList(0, 99).joinToString(br).split(br))
+        foo.`Need numbers printed, but only if not divisible by 3 or 5`(n)
+        assertEquals(outContent.toString(), comparison.subList(0, n).joinToString(br) + br)
     }
 
     @Test
     fun `Should print from 1 to a random number correctly`() {
         val random = (1..100).random()
-        foo.fooBar(random)
+        foo.`Need numbers printed, but only if not divisible by 3 or 5`(random)
         assertEquals(outContent.toString(), comparison.subList(0, random).joinToString(br) + br)
     }
+
+
 }

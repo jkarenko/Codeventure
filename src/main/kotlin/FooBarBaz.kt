@@ -7,19 +7,31 @@ class FooBarBaz {
      * Otherwise, it prints the number.
      * @param number The number to count to.
      */
-    fun fooBar(number: Int) {
-        // your code here
+    fun `Need numbers printed, but only if not divisible by 3 or 5`(number: Int) {
         for (i in 1..number) {
-            if (i % 3 == 0) {
-                print("Foo")
+            if (i % 3 == 0 && i % 5 == 0) {
+                println("FooBar")
+            } else if (i % 3 == 0) {
+                println("Foo")
+            } else if (i % 5 == 0) {
+                println("Bar")
+            } else {
+                println(i)
             }
-            if (i % 5 == 0) {
-                print("Bar")
-            }
-            if (i % 3 != 0 && i % 5 != 0) {
-                print(i)
-            }
-            println()
         }
+
+    }
+
+
+    /**
+     * I have many names but a curse has befallen me, and now they are all scrambled up!
+     * My first letter has switched places with the last.
+     * My second letter has switched places with the second to last.
+     * my... you get the idea. Please help me!
+     * @param name The name to unscramble.
+     * @return The unscrambled name.
+     */
+    fun `Help! I've been cursed and you must guess my name!`(name: String): String {
+        return name
     }
 }

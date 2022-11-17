@@ -15,6 +15,7 @@ repositories {
 dependencies {
     testImplementation(kotlin("test"))
     testImplementation("org.testng:testng:7.1.0")
+    implementation("org.jetbrains.kotlin:kotlin-reflect:1.7.21")
 }
 
 tasks.test {
