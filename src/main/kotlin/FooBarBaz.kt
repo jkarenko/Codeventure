@@ -8,18 +8,7 @@ class FooBarBaz {
      * @param number The number to count to.
      */
     fun `Need numbers printed, but only if not divisible by 3 or 5`(number: Int) {
-        for (i in 1..number) {
-            if (i % 3 == 0 && i % 5 == 0) {
-                println("FooBar")
-            } else if (i % 3 == 0) {
-                println("Foo")
-            } else if (i % 5 == 0) {
-                println("Bar")
-            } else {
-                println(i)
-            }
-        }
-
+        println(number)
     }
 
 
@@ -32,6 +21,6 @@ class FooBarBaz {
      * @return The unscrambled name.
      */
     fun `Help! I've been cursed and you must guess my name!`(name: String): String {
-        return name.reversed()
+        return name
     }
 }

@@ -12,10 +12,7 @@ fun main() {
 
     """.trimIndent())
 
-//    list all kotlin classes
     println("FooBarBaz Disctrict:")
     Class.forName("FooBarBaz").declaredMethods.forEach { println(it.name.prependIndent(" -> ")) }
-    println("Graveyard:")
-    Class.forName("Graveyard").declaredMethods.forEach { println(it.name.prependIndent(" -> ")) }
 
 }
