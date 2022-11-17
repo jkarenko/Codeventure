@@ -150,5 +150,24 @@ class FooBarBazTest {
         assertEquals(outContent.toString(), comparison.subList(0, random).joinToString(br) + br)
     }
 
+    @Test
+    fun `Should unscramble morg`() {
+        val name = "morg"
+        val expected = "grom"
+        assertEquals(foo.`Help! I've been cursed and you must guess my name!`(name), expected)
+    }
 
+    @Test
+    fun `Should unscramble doowle`() {
+        val name = "doowle"
+        val expected = "elwood"
+        assertEquals(foo.`Help! I've been cursed and you must guess my name!`(name), expected)
+    }
+
+    @Test
+    fun `Should unscramble random name`() {
+        val name = (1..(5..10).random()).map { ('a'..'z').random() }.joinToString("")
+        val expected = name.reversed()
+        assertEquals(foo.`Help! I've been cursed and you must guess my name!`(name), expected)
+    }
 }

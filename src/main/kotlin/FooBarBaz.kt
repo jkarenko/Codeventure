@@ -32,6 +32,6 @@ class FooBarBaz {
      * @return The unscrambled name.
      */
     fun `Help! I've been cursed and you must guess my name!`(name: String): String {
-        return name
+        return name.reversed()
     }
 }
